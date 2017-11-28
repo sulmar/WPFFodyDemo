@@ -1,0 +1,29 @@
+﻿<Window x:Class="WPFFodyDemo.Views.CustomerView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:WPFFodyDemo.ViewModels"
+        xmlns:local="clr-namespace:WPFFodyDemo.Views"
+        mc:Ignorable="d"
+        Title="CustomerView" Height="300" Width="300">
+
+    <Window.DataContext>
+        <vm:CustomerViewModel />
+    </Window.DataContext>
+    <Grid>
+
+        <StackPanel>
+
+            <TextBox Text="{Binding SelectedCustomer.FirstName}" />
+
+            <TextBox Text="{Binding SelectedCustomer.LastName}" />
+
+            <Label Content="{Binding SelectedCustomer.FullName}" />
+
+            
+            <Button Content="Update" Click="Button_Click" />
+        </StackPanel>
+        
+    </Grid>
+</Window>
